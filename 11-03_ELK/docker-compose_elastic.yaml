@@ -27,8 +27,6 @@ services:
       forELK:
         ipv4_address: 192.168.21.2
 
-
-
 networks:
   forELK:
     ipam:
