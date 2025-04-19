@@ -4,10 +4,12 @@ services:
   # Elasticsearch Docker Images: https://www.docker.elastic.co/
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.17.5
+    restart: always
     container_name: elasticsearchGeorge
     environment:
       - xpack.security.enabled=false
       - discovery.type=single-node
+      - cluster.name=es-nodeGeorge-1
     ulimits:
       memlock:
         soft: -1
@@ -18,30 +20,68 @@ services:
     cap_add:
       - IPC_LOCK
     volumes:
-      - ./elasticsearch/data:/usr/share/elasticsearch/data:rw
-      - ./elasticsearch/config/elasticsearch.yaml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - elasticsearch-data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
       - 9300:9300
-
+    networks:
+      forELK:
+        ipv4_address: 192.168.21.2
+  
   kibana:
-    container_name: kibana
-    image: kibana:7.17.9
+    container_name: kibanaGeorge
+    image: kibana:8.16.5
+    restart: always
     environment:
-      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - ELASTICSEARCH_HOSTS=http://192.168.21.2:9200
     ports:
       - 5601:5601
+    depends_on: 
+      - elasticsearch
+    networks:
+      forELK:
+        ipv4_address: 192.168.21.3
+      
+  logstash:
+    container_name: logstashGeorge
+    image: logstash:8.17.4
+    user: root
+    restart: always
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+    #  - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml
+      - ./logstash/pipelines:/usr/share/logstash/pipeline
+      - ./nginx-logs:/usr/share/logstash/nginx
+    #  - /home/george/Desktop/myProjects/Study/git/sdb-homeworks/11-03_ELK/logstash/output.txt:/usr/share/logstash/output.txt
+    ports:
+      - "5044:5044/udp"
+    #command: logstash -f /usr/share/logstash/conf
     depends_on:
       - elasticsearch
+    networks:
+      forELK:
+        ipv4_address: 192.168.21.4
 
-#  filebeat:
-#    image: docker.elastic.co/beats/filebeat:7.17.9
-#    command: --strict.perms=false
-#    user: root
-#    volumes:
-#      - /projects/test/filebeat.yml:/usr/share/filebeat/filebeat.yml
-#      - /var/lib/docker:/var/lib/docker:ro
-#      - /var/run/docker.sock:/var/run/docker.sock
+  nginx:
+    container_name: nginxGeorge
+    image: nginx:latest
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./nginx-logs:/var/log/nginx
+    networks:
+      forELK:
+        ipv4_address: 192.168.21.5
+    depends_on: 
+      - logstash
+
+networks:
+  forELK:
+    ipam:
+#     driver: bridge
+     config:
+        - subnet: 192.168.21.0/24
 
 volumes:
   elasticsearch-data:

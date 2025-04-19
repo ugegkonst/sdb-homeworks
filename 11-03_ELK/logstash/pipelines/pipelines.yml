@@ -1,4 +1,0 @@
-pipeline.id: service_stamped_json_logs
-pipeline.workers: 1
-pipeline.batch.size: 1
-path.config: "/home/george/Desktop/myProjects/Study/git/sdb-homeworks/11-03_ELK/logstash/pipelines/nginx_access_logs.conf"
