@@ -58,6 +58,8 @@
 
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.*
 
+![logstash ELK](https://github.com/ugegkonst/sdb-homeworks/blob/53c79f4ad1109e8c3c0e0989d84b47e414f61d69/img/ELK_3.png)
+
 ---
 
 ### Задание 4. Filebeat. 
