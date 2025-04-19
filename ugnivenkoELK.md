@@ -58,8 +58,17 @@
 
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx.*
 
-logstash.conf:
+docker-compose.yml
+[docker-compose](https://github.com/ugegkonst/sdb-homeworks/blob/53c79f4ad1109e8c3c0e0989d84b47e414f61d69/11-03_ELK/docker-compose.yaml)
 
+logstash.conf:
+![logstash.conf](https://github.com/ugegkonst/sdb-homeworks/blob/f145c312bfb258fca5d009443880e003e5fe3a00/img/ELK_3-1.png)
+
+logstash.yml:
+![logstash.yml](https://github.com/ugegkonst/sdb-homeworks/blob/f145c312bfb258fca5d009443880e003e5fe3a00/img/ELK_3-2.png)
+
+pipelines.yml:
+![pipelines.yml](https://github.com/ugegkonst/sdb-homeworks/blob/f145c312bfb258fca5d009443880e003e5fe3a00/img/ELK_3-3.png)
 
 
 
