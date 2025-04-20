@@ -83,6 +83,17 @@ pipelines.yml:
 
 *Приведите скриншот интерфейса Kibana, на котором видны логи Nginx, которые были отправлены через Filebeat.*
 
+Ссылка на docker-compose:
+[docker-compose_fb.yml](https://github.com/ugegkonst/sdb-homeworks/blob/1fa3ae77c686052c14abfa919524239d101a7062/11-03_ELK/docker-compose_fb.yaml)
+
+filebeat.yml:
+![filebeat](https://github.com/ugegkonst/sdb-homeworks/blob/1fa3ae77c686052c14abfa919524239d101a7062/img/ELK_4-2.png)
+
+Отображение filebeat в indices
+![filebeat->indices](https://github.com/ugegkonst/sdb-homeworks/blob/1fa3ae77c686052c14abfa919524239d101a7062/img/ELK_4.png)
+
+Logs:
+[logs](https://github.com/ugegkonst/sdb-homeworks/blob/1fa3ae77c686052c14abfa919524239d101a7062/img/ELK_4-1.png)
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
