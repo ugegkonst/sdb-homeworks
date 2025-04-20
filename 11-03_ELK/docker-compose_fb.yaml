@@ -75,6 +75,21 @@ services:
     depends_on: 
       - logstash
 
+  filebeat:
+    container_name: filebeatGeorge
+    image: elastic/filebeat:8.17.5
+    user: root
+    command: --strict.perms=false
+    restart: always
+    volumes:
+      - ./nginx-logs:/usr/share/filebeat/nginx
+      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker:/var/lib/docker:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      forELK:
+        ipv4_address: 192.168.21.6
+
 networks:
   forELK:
     ipam:
