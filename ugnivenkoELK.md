@@ -93,7 +93,7 @@ filebeat.yml:
 ![filebeat->indices](https://github.com/ugegkonst/sdb-homeworks/blob/1fa3ae77c686052c14abfa919524239d101a7062/img/ELK_4.png)
 
 Logs:
-[logs](https://github.com/ugegkonst/sdb-homeworks/blob/1fa3ae77c686052c14abfa919524239d101a7062/img/ELK_4-1.png)
+![logs](https://github.com/ugegkonst/sdb-homeworks/blob/1fa3ae77c686052c14abfa919524239d101a7062/img/ELK_4-1.png)
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
