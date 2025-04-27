@@ -64,6 +64,8 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 customer         | customer_id
 ```
 
+[googleDocs link](https://docs.google.com/spreadsheets/d/1UDJdV557KMGguiJ5bJN1CAXMZba5V8WjQ34vk2n_NEA/edit?usp=sharing)
+
 
 ## Дополнительные задания (со звёздочкой*)
 Эти задания дополнительные, то есть не обязательные к выполнению, и никак не повлияют на получение вами зачёта по этому домашнему заданию. Вы можете их выполнить, если хотите глубже шире разобраться в материале.
