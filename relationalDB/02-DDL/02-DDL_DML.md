@@ -63,6 +63,7 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 Название таблицы | Название первичного ключа
 customer         | customer_id
 ```
+Ссылка на Google таблицу:
 
 [googleDocs link](https://docs.google.com/spreadsheets/d/1UDJdV557KMGguiJ5bJN1CAXMZba5V8WjQ34vk2n_NEA/edit?usp=sharing)
 
