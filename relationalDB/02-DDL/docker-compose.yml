@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  db:
+    container_name: georgeMySQL
+    image: mysql:8.4
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1z2x3c
+      - MYSQL_PASSWORD=1z2x3c
+      - MYSQL_USER=sys_temp
+      - DBNAME=sakila
+
+    volumes:
+      - ./mysqlDATA:/var/lib/mysql
+      - ./sakila-db:/home
+    
