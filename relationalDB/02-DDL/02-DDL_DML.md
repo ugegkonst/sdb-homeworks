@@ -26,9 +26,13 @@
 
 1.3. Выполните запрос на получение списка пользователей в базе данных. (скриншот)
 
+![userList](https://github.com/ugegkonst/sdb-homeworks/blob/15ac0dcec2374923b6020ce8a43c05e142d44563/relationalDB/02-DDL/img/02-DDL-1_3.png)
+
 1.4. Дайте все права для пользователя sys_temp. 
 
 1.5. Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
+
+![sys_tempPrivileges](https://github.com/ugegkonst/sdb-homeworks/blob/15ac0dcec2374923b6020ce8a43c05e142d44563/relationalDB/02-DDL/img/02-DDL-1_5.png)
 
 1.6. Переподключитесь к базе данных от имени sys_temp.
 
@@ -41,6 +45,14 @@ ALTER USER 'sys_test'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass
 1.7. Восстановите дамп в базу данных.
 
 1.8. При работе в IDE сформируйте ER-диаграмму получившейся базы данных. При работе в командной строке используйте команду для получения всех таблиц базы данных. (скриншот)
+
+![sakitaRestore](https://github.com/ugegkonst/sdb-homeworks/blob/15ac0dcec2374923b6020ce8a43c05e142d44563/relationalDB/02-DDL/img/02-DDL-1_8.png)
+
+Примерный список команд
+
+![commandList](https://github.com/ugegkonst/sdb-homeworks/blob/15ac0dcec2374923b6020ce8a43c05e142d44563/relationalDB/02-DDL/img/02-DDL-1_8-1.png)
+
+![sakitaDiagram](https://github.com/ugegkonst/sdb-homeworks/blob/15ac0dcec2374923b6020ce8a43c05e142d44563/relationalDB/02-DDL/img/02-DDL-1_8-2.png)
 
 *Результатом работы должны быть скриншоты обозначенных заданий, а также простыня со всеми запросами.*
 
