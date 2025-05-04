@@ -23,17 +23,17 @@ SELECT
 FROM sakila.film
 WHERE length > (SELECT AVG(length) FROM sakila.film);
 
+
 #(SELECT AVG(length) FROM sakila.film) AS averageLength,
 #(SELECT COUNT(film_id) FROM sakila.film) AS 'filmQuantity',
 
 # 3
 SELECT
-	SUBSTRING_INDEX(DATE(payment_date),'-',1) AS Year,
-	MONTH(payment_date) AS Month,
+	SUBSTRING_INDEX(DATE(payment_date),'-',2) AS yearMonth,
 	COUNT(payment_id) AS numberOfPayments,
-	SUM(amount) AS totalAmount
+	SUM(amount)
 FROM sakila.payment
-GROUP BY Year, Month
+GROUP BY yearMonth
 ORDER BY COUNT(payment_id) DESC LIMIT 1;
 
 
