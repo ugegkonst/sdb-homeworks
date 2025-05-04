@@ -30,11 +30,11 @@ WHERE length > (SELECT AVG(length) FROM sakila.film);
 # 3
 SELECT
 	SUBSTRING_INDEX(DATE(payment_date),'-',2) AS yearMonth,
-	COUNT(payment_id) AS numberOfPayments,
-	SUM(amount)
+	COUNT(rental.rental_id) AS rentCount
 FROM sakila.payment
+JOIN rental ON rental.rental_id = payment.rental_id 
 GROUP BY yearMonth
-ORDER BY COUNT(payment_id) DESC LIMIT 1;
+ORDER BY SUM(amount) DESC LIMIT 1;
 
 
 	#CASE
@@ -84,7 +84,13 @@ WHERE
 
 
 
-
+SELECT
+	SUBSTRING_INDEX(DATE(payment_date),'-',2) AS yearMonth,
+	COUNT(payment_id) AS numberOfPayments,
+	MAX(SUM(amount)) maxAmount
+FROM sakila.payment
+GROUP BY yearMonth
+#ORDER BY COUNT(payment_id) DESC LIMIT 1;
 
 
 
