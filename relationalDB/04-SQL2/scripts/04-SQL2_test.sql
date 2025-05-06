@@ -36,9 +36,10 @@ GROUP BY yearMonth
 ORDER BY SUM(amount) DESC LIMIT 1;
 
  #3
-select max(dat)
-FROM (SELECT SUBSTRING_INDEX(DATE(payment_date),'-',2) AS yearMonth, 
-	  SUM(amount) as dat 
+select max(dat), yearMonth
+FROM (SELECT
+     SUBSTRING_INDEX(DATE(payment_date),'-',2) AS yearMonth,
+	  max(SUM(amount)) as dat 
  	  FROM sakila.payment 
  	  GROUP BY yearMonth) as tt;
 
