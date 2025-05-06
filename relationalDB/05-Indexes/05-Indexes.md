@@ -30,7 +30,7 @@ SELECT
 FROM information_schema.TABLES
 WHERE table_schema = 'sakila';
 ```
-
+![task 1](https://github.com/ugegkonst/sdb-homeworks/blob/e4590fe0d9de0e078e5ce215b2089ebf75ed0860/relationalDB/05-Indexes/img/05-Indexes-1.png)
 
 ### Задание 2
 
