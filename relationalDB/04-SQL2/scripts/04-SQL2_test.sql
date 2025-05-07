@@ -29,36 +29,13 @@ WHERE length > (SELECT AVG(length) FROM sakila.film);
 
 # 3
 SELECT
-	SUBSTRING_INDEX(DATE(payment_date),'-',2) AS yearMonth,
-	COUNT(payment.payment_id) AS paymentCount
-FROM sakila.payment
+	DATE(payment_date) AS yearMonth,
+	COUNT(p.payment_id) AS paymentCount
+FROM sakila.payment as p
 GROUP BY yearMonth
-ORDER BY SUM(amount) DESC LIMIT 1;
-
- #3
-select max(dat), yearMonth
-FROM (SELECT
-     SUBSTRING_INDEX(DATE(payment_date),'-',2) AS yearMonth,
-	  max(SUM(amount)) as dat 
- 	  FROM sakila.payment 
- 	  GROUP BY yearMonth) as tt;
+#ORDER BY SUM(amount) DESC LIMIT 1;
 
 
-
-	#CASE
-	#	WHEN MONTH(payment_date) = 01 THEN 'January'
-	#	WHEN MONTH(payment_date) = 02 THEN 'February'
-	#	WHEN MONTH(payment_date) = 03 THEN 'March'
-	#	WHEN MONTH(payment_date) = 04 THEN 'April'
-	#	WHEN MONTH(payment_date) = 05 THEN 'May'
-	#	WHEN MONTH(payment_date) = 06 THEN 'June'
-	#	WHEN MONTH(payment_date) = 07 THEN 'July'
-	#	WHEN MONTH(payment_date) = 08 THEN 'August'
-	#	WHEN MONTH(payment_date) = 09 THEN 'September'
-	#	WHEN MONTH(payment_date) = 10 THEN 'October'
-	#	WHEN RIGHT(SUBSTRING_INDEX(DATE(payment_date),'-',2),2) = 11 THEN 'November'
-	#	ELSE 'December'
-	#END AS Month,
 
 
 # 4
