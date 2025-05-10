@@ -23,6 +23,35 @@
 
 *Приложите скриншоты конфигурации, выполнения работы: состояния и режимы работы серверов.*
 
+docker-compose.yml
+
+![task 1](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication-1-1.png)
+
+Конфиг my.cnf на Master
+
+![task 1_2](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication1-1_2.png)
+
+Конфиг my.cnf на Slave
+
+![task 1_3](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication1-1_3.png)
+
+Рабочее состояние контейнеров после перезапуска
+
+![task 1_4](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication1-1_4.png)
+
+Настройка slave ноды и вывод show slave status\g
+
+![task 1_5](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication1-1_5.png)
+
+![task 1_6](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication1-1_6.png)
+
+Создание новой б/д на Master
+
+![task 1_7](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication1-1_7.png)
+
+Репликация данных Master на Slave
+
+![task 1_8](https://github.com/ugegkonst/sdb-homeworks/blob/72fea09b1129c1387b175b39e67f7937e4fbb794/relationalDB/06-Replication-1/img/06-Replication1-1_8.png)
 ---
 
 ### Задание 2
