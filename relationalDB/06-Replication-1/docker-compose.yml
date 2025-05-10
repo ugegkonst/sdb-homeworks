@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  db-master:
+    container_name: replication-master
+    image: mysql:8.3
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1z2x3c
+    #  - MYSQL_PASSWORD=1z2x3c
+    #  - MYSQL_USER=sys_temp
+    #  - DBNAME=sakila
+    volumes:
+      - ./mySqlDataMaster:/var/lib/mysql
+      - ./dbMaster:/home
+    networks:
+      replication-network:
+        ipv4_address: 192.168.23.4
+
+  db-slave:
+    container_name: replication-slave
+    image: mysql:8.3
+    restart: always
+    ports:
+      - "3307:3307"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1z2x3c
+    #  - MYSQL_PASSWORD=1z2x3c
+    #  - MYSQL_USER=sys_temp
+    #  - DBNAME=sakila
+    volumes:
+      - ./mySqlDataSlave:/var/lib/mysql
+      - ./dbSlave:/home
+    depends_on:
+      - db-master
+    networks:
+      replication-network:
+        ipv4_address: 192.168.23.5
+  
+networks:
+  replication-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.23.0/24
+          gateway: 192.168.23.1

@@ -1,0 +1,5 @@
+dbMaster/
+mySqlDataMaster/
+dbSlave/
+mySqlDataSlave/
+sakila-db/
